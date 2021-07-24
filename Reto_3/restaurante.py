@@ -4,7 +4,7 @@ billete5, billete10, billete20, billete50, billete100, billete200, billete500 = 
 platos = []
 precio_cliente = []
 
-menu = {'1' : ['ensalada de tomate y lechuga',2], '2' : ['croquetas de pollo',3], '3' : ['tabla de quesos variados',3], '4' : ['filete de ternera',5], '5' : ['cocido madrileño',4], '6' : ['paella una persona',5], '7' : ['sopa de marisco',3], '8' : ['flan de huevo',2], '9' : ['helado de vainilla',2]}
+menu = {'1' : ['ensalada de tomate y lechuga',2], '2' : ['croquetas de pollo',3], '3' : ['tabla de quesos variados',3], '4' : ['filete de ternera',5], '5' : ['cocido madrileño',4], '6' : ['paella una persona',5], '7' : ['sopa de marisco',4], '8' : ['flan de huevo',2], '9' : ['helado de vainilla',2]}
 
 print(menu)
 
@@ -18,7 +18,7 @@ print(f'''
 4 - filete de ternera:              5 EUROS
 5 - cocido madrileño:               4 EUROS
 6 - paella una persona:             5 EUROS
-7 - sopa de marisco:                3 EUROS
+7 - sopa de marisco:                4 EUROS
 8 - flan de huevo:                  2 EUROS
 9 - helado de vainilla:             2 EUROS
 
