@@ -36,4 +36,4 @@ while True:
 
 print(platos)
 print(precio_cliente)
-print(f'El precio de su menú es: {sum(precio_cliente)}')
+print(f'El precio de su menú es: {sum(precio_cliente)} €')
