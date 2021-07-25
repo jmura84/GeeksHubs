@@ -12,7 +12,7 @@ class Alumno():
         self.Edad = edad
 
     def Saludar(self):
-        print(f'Hola, me llamo {self.Nombre}.')
+        print(f'Hola, me llamo {self.Nombre} {self.Apellidos} y tengo {self.Edad} años')
 
     def AñadirNota(self, nota):
         self.Nota
