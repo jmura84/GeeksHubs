@@ -41,8 +41,8 @@ class Asignatura():
     Nombre = ''
     Nota = 0
 
-    def __init__(self, nombre):
-        self.Nombre = nombre
+    def __init__(self, nombre, nota):
+        self.AñadirNota(nombre, nota)
 
     def AñadirNota(self, nombre, nota):
         if nota >= 0 and nota <= 10:
@@ -83,9 +83,8 @@ print(jose.Asignaturas)
 
 jose.EliminarAsignatura('Castellano')
 
-asignatura = Asignatura('Castellano')
+asignatura = Asignatura('Castellano', 9)
 
-asignatura.AñadirNota('Castellano', 9)
 
 
 #jose.Nombre = 'José'
