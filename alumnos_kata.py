@@ -37,17 +37,19 @@ class Alumno():
 
 
 
-
 class Asignatura():
-    Nombre = []
+    Nombre = ''
     Nota = 0
 
-    def __init__(self, *nombre):
-        self.Nombre.append(nombre)
+    def __init__(self, nombre):
+        self.Nombre = nombre
 
-    def AñadirNota(self, nota):
+    def AñadirNota(self, nombre, nota):
         if nota >= 0 and nota <= 10:
             self.Nota = nota
+            self.Nombre = nombre
+            resultado = list((self.Nombre, self.Nota))
+            print(resultado)
         else:
             self.Nota = 0
             raise ValueError('La nota debe ser 0 o mayor y no puede ser mayor de 10.')
@@ -80,6 +82,10 @@ jose.AñadirAsignatura('Geografía')
 print(jose.Asignaturas)
 
 jose.EliminarAsignatura('Castellano')
+
+asignatura = Asignatura('Castellano')
+
+asignatura.AñadirNota('Castellano', 9)
 
 
 #jose.Nombre = 'José'
