@@ -37,7 +37,7 @@ print(jose.Edad)
 
 jose.Saludar()
 
-jose.AñadirNota(-1)
+jose.AñadirNota(9)
 print(f'La nota de {jose.Nombre} {jose.Apellidos} es {jose.Nota}.')
 
 #jose.Nombre = 'José'
