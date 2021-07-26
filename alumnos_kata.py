@@ -18,28 +18,31 @@ class Alumno():
         if nota >= 0 and nota <= 10:
             self.Nota = nota
         else:
-            print('La nota debe ser 0 o mayor y no puede ser mayor de 10.')
             self.Nota = 0
+            raise ValueError('La nota debe ser 0 o mayor y no puede ser mayor de 10.')
 
     def CumplirAños(self):
         self.Edad += 1
 
 jose = Alumno('José', 'Pérez Martínez', '94839294M', 20)
 
+print(jose.Nombre)
+print(jose.Apellidos)
+print(jose.Dni)
+print(jose.Edad)
+
+jose.CumplirAños()
+
+print(jose.Edad)
+
+jose.Saludar()
+
+jose.AñadirNota(-1)
+print(f'La nota de {jose.Nombre} {jose.Apellidos} es {jose.Nota}.')
+
 #jose.Nombre = 'José'
 #jose.Apellidos = 'Pérez Martínez'
 #jose.Dni = '94839294M'
 #jose.Edad = 20
 
-jose.AñadirNota(848)
 
-print(jose.Nombre)
-print(jose.Apellidos)
-print(jose.Dni)
-print(jose.Edad)
-print(jose.Nota)
-
-jose.CumplirAños()
-
-print(jose.Edad)
-jose.Saludar()
