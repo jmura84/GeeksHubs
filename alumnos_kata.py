@@ -14,8 +14,12 @@ class Alumno():
     def Saludar(self):
         print(f'Hola, me llamo {self.Nombre} {self.Apellidos} y tengo {self.Edad} años.')
 
-    def AñadirNota(self):
-        self.Nota
+    def AñadirNota(self, nota):
+        if nota >= 0 and nota <= 10:
+            self.Nota = nota
+        else:
+            print('La nota debe ser 0 o mayor y no puede ser mayor de 10.')
+            self.Nota = 0
 
     def CumplirAños(self):
         self.Edad += 1
@@ -27,7 +31,7 @@ jose = Alumno('José', 'Pérez Martínez', '94839294M', 20)
 #jose.Dni = '94839294M'
 #jose.Edad = 20
 
-jose.Nota = 9
+jose.AñadirNota(848)
 
 print(jose.Nombre)
 print(jose.Apellidos)
