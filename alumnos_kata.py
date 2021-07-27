@@ -56,6 +56,33 @@ class Asignatura():
 
 
 
+class Clase():
+    Profesor = ''
+    Alumnos = []
+    Asignaturas = []
+
+    def AñadirAlumno(self, alumno):
+        self.Alumnos.append(alumno)
+        print(self.Alumnos)
+
+    def BorrarAlumno(self, alumno):
+        if alumno in self.Alumnos:
+            self.Alumnos.remove(alumno)
+            print(self.Alumnos)
+        else:
+            raise ValueError('Este alumno no está en esta clase.')
+
+    def AñadirAsignatura(self, asignatura):
+        self.Asignaturas.append(asignatura)
+        print(self.Asignaturas)
+
+    def BorrarAsignatura(self, asignatura):
+        if asignatura in self.Asignaturas:
+            self.Asignaturas.remove(asignatura)
+            print(self.Asignaturas)
+        else:
+            raise ValueError('Esta asignatura no está en la lista.')
+
 
 
 jose = Alumno('José', 'Pérez Martínez', '94839294M', 20)
@@ -85,6 +112,21 @@ jose.EliminarAsignatura('Castellano')
 
 asignatura = Asignatura('Castellano', 9)
 
+clase_a = Clase()
+
+clase_a.AñadirAsignatura('Castellano')
+clase_a.AñadirAsignatura('Mates')
+clase_a.AñadirAsignatura('Historia')
+clase_a.AñadirAsignatura('Geografía')
+
+clase_a.AñadirAlumno('Pepe')
+clase_a.AñadirAlumno('María')
+clase_a.AñadirAlumno('Pedro')
+clase_a.AñadirAlumno('Carlos')
+
+
+clase_a.BorrarAsignatura('Mates')
+clase_a.BorrarAlumno('Pepe')
 
 
 #jose.Nombre = 'José'
