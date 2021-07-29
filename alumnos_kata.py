@@ -61,6 +61,9 @@ class Clase():
     Alumnos = []
     Asignaturas = []
 
+    def __init__(self, profesor):
+        self.Profesor = profesor
+
     def AñadirAlumno(self, alumno):
         self.Alumnos.append(alumno)
         print(self.Alumnos)
@@ -112,7 +115,7 @@ jose.EliminarAsignatura('Castellano')
 
 asignatura = Asignatura('Castellano', 9)
 
-clase_a = Clase()
+clase_a = Clase('Benito López')
 
 clase_a.AñadirAsignatura('Castellano')
 clase_a.AñadirAsignatura('Mates')
@@ -120,6 +123,7 @@ clase_a.AñadirAsignatura('Historia')
 clase_a.AñadirAsignatura('Geografía')
 
 clase_a.AñadirAlumno('Pepe')
+clase_a.AñadirAlumno('Carlos')
 clase_a.AñadirAlumno('María')
 clase_a.AñadirAlumno('Pedro')
 clase_a.AñadirAlumno('Carlos')
@@ -127,6 +131,11 @@ clase_a.AñadirAlumno('Carlos')
 
 clase_a.BorrarAsignatura('Mates')
 clase_a.BorrarAlumno('Pepe')
+
+
+print(clase_a.Profesor)
+print(clase_a.Alumnos, end = ' ')
+print(clase_a.Asignaturas, end = ' ')
 
 
 #jose.Nombre = 'José'
