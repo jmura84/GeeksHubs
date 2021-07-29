@@ -24,6 +24,7 @@ print(f'''
 
 ============================================
 ''')
+
 while True:
     try:
         seleccion = input('Elija el plato por su número y presione Enter.\nCuando haya acabado de elegir, presione Enter de nuevo: ')
