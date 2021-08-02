@@ -1,88 +1,97 @@
 class Alumno():
-    Nombre = ''
-    Apellidos = ''
-    Dni = ''
-    Edad = 0
-    Nota = 0
-    Asignaturas = []
+    # Propiedades
+    nombre = ''
+    apellidos = ''
+    dni = ''
+    edad = 0
+    nota = 0
+    asignaturas = []
 
+    # Constructor
     def __init__(self, nombre, apellidos, dni, edad):
-        self.Nombre = nombre
-        self.Apellidos = apellidos
-        self.Dni = dni
-        self.Edad = edad
+        self.nombre = nombre
+        self.apellidos = apellidos
+        self.dni = dni
+        self.edad = edad
 
+    # Métodos
     def Saludar(self):
-        print(f'Hola, me llamo {self.Nombre} {self.Apellidos} y tengo {self.Edad} años.')
+        print(f'Hola, me llamo {self.nombre} {self.apellidos} y tengo {self.edad} años.')
 
-    def AñadirNota(self, nota):
+    def Añadirnota(self, nota):
         if nota >= 0 and nota <= 10:
-            self.Nota = nota
+            self.nota = nota
         else:
-            self.Nota = 0
+            self.nota = 0
             raise ValueError('La nota debe ser 0 o mayor y no puede ser mayor de 10.')
 
     def CumplirAños(self):
-        self.Edad += 1
+        self.edad += 1
 
     def AñadirAsignatura(self, asignatura):
-        self.Asignaturas.append(asignatura)
+        self.asignaturas.append(asignatura)
 
     def EliminarAsignatura(self, asignatura):
-        if asignatura in self.Asignaturas:
-            self.Asignaturas.remove(asignatura)
-            print(self.Asignaturas)
+        if asignatura in self.asignaturas:
+            self.asignaturas.remove(asignatura)
+            print(self.asignaturas)
         else:
             raise ValueError('La asignatura no estaba en la lista.')
 
 
 
 class Asignatura():
-    Nombre = ''
-    Nota = 0
+    # Propiedades
+    nombre = ''
+    nota = 0
 
+    # Constructor
     def __init__(self, nombre, nota):
-        self.AñadirNota(nombre, nota)
+        self.Añadirnota(nombre, nota)
 
-    def AñadirNota(self, nombre, nota):
+    # Métodos
+    def Añadirnota(self, nombre, nota):
         if nota >= 0 and nota <= 10:
-            self.Nota = nota
-            self.Nombre = nombre
-            resultado = list((self.Nombre, self.Nota))
+            self.nota = nota
+            self.nombre = nombre
+            resultado = list((self.nombre, self.nota))
             print(resultado)
         else:
-            self.Nota = 0
+            self.nota = 0
             raise ValueError('La nota debe ser 0 o mayor y no puede ser mayor de 10.')
 
 
 
 class Clase():
-    Profesor = ''
-    Alumnos = []
-    Asignaturas = []
+    # Propiedades
+    profesor = ''
+    alumnos = []
+    asignaturas = []
 
+    # Constructor
     def __init__(self, profesor):
-        self.Profesor = profesor
+        self.profesor = profesor
 
+    # Métodos
     def AñadirAlumno(self, alumno):
-        self.Alumnos.append(alumno)
-        print(self.Alumnos)
+        self.alumnos.append(alumno)
+        print(self.alumnos)
 
     def BorrarAlumno(self, alumno):
-        if alumno in self.Alumnos:
-            self.Alumnos.remove(alumno)
-            print(self.Alumnos)
+        if alumno in self.alumnos:
+            self.alumnos.remove(alumno)
+            print(self.alumnos)
         else:
             raise ValueError('Este alumno no está en esta clase.')
 
     def AñadirAsignatura(self, asignatura):
-        self.Asignaturas.append(asignatura)
-        print(self.Asignaturas)
+        self.asignaturas.append(asignatura)
+        print(self.asignaturas)
 
     def BorrarAsignatura(self, asignatura):
-        if asignatura in self.Asignaturas:
-            self.Asignaturas.remove(asignatura)
-            print(self.Asignaturas)
+        if asignatura in self.asignaturas:
+            self.asignaturas.remove(asignatura)
+            print(self.asignaturas)
         else:
             raise ValueError('Esta asignatura no está en la lista.')
 
@@ -90,26 +99,26 @@ class Clase():
 
 jose = Alumno('José', 'Pérez Martínez', '94839294M', 20)
 
-print(jose.Nombre)
-print(jose.Apellidos)
-print(jose.Dni)
-print(jose.Edad)
+print(jose.nombre)
+print(jose.apellidos)
+print(jose.dni)
+print(jose.edad)
 
 jose.CumplirAños()
 
-print(jose.Edad)
+print(jose.edad)
 
 jose.Saludar()
 
-jose.AñadirNota(9)
-print(f'La nota de {jose.Nombre} {jose.Apellidos} es {jose.Nota}.')
+jose.Añadirnota(9)
+print(f'La nota de {jose.nombre} {jose.apellidos} es {jose.nota}.')
 
 jose.AñadirAsignatura('Castellano')
 jose.AñadirAsignatura('Mates')
 jose.AñadirAsignatura('Historia')
 jose.AñadirAsignatura('Geografía')
 
-print(jose.Asignaturas)
+print(jose.asignaturas)
 
 jose.EliminarAsignatura('Castellano')
 
@@ -133,14 +142,14 @@ clase_a.BorrarAsignatura('Mates')
 clase_a.BorrarAlumno('Pepe')
 
 
-print(clase_a.Profesor)
-print(clase_a.Alumnos, end = ' ')
-print(clase_a.Asignaturas, end = ' ')
+print(clase_a.profesor)
+print(clase_a.alumnos, end = ' ')
+print(clase_a.asignaturas, end = ' ')
 
 
-#jose.Nombre = 'José'
-#jose.Apellidos = 'Pérez Martínez'
-#jose.Dni = '94839294M'
-#jose.Edad = 20
+#jose.nombre = 'José'
+#jose.apellidos = 'Pérez Martínez'
+#jose.dni = '94839294M'
+#jose.edad = 20
 
 
