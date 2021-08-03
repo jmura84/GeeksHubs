@@ -2,7 +2,7 @@ class Alumno():
     # Propiedades
     nombre = ''
     apellidos = ''
-    dni = ''
+    __dni = ''
     edad = 0
     nota = 0
     asignaturas = []
@@ -12,19 +12,22 @@ class Alumno():
     def __init__(self, nombre, apellidos, dni, edad, id):
         self.nombre = nombre
         self.apellidos = apellidos
-        self.dni = dni
+        self.__dni = dni
         self.edad = edad
         self.__id = id
 
     # Métodos
     @property
-    def get_id(self):
+    def id(self):
         return self.__id
+    @property
+    def dni(self):
+        return self.__dni
 
     def Saludar(self):
         print(f'Hola, me llamo {self.nombre} {self.apellidos} y tengo {self.edad} años.')
 
-    def Añadirnota(self, nota):
+    def nota(self, nota):
         if nota >= 0 and nota <= 10:
             self.nota = nota
         else:
@@ -49,27 +52,30 @@ class Alumno():
 class Asignatura():
     # Propiedades
     nombre = ''
-    nota = 0
+    __nota = 0
     __id = 0
 
     # Constructor
     def __init__(self, nombre, nota, id):
-        self.Añadirnota(nombre, nota)
+        self.nota(nombre, nota)
         self.__id = id
 
     # Métodos
     @property
-    def get_id(self):
+    def id(self):
         return self.__id
-
-    def Añadirnota(self, nombre, nota):
+    @property
+    def nota(self):
+        return self.__nota
+    @nota.setter
+    def nota(self, nombre, nota):
         if nota >= 0 and nota <= 10:
-            self.nota = nota
+            self.__nota = nota
             self.nombre = nombre
-            resultado = list((self.nombre, self.nota))
+            resultado = list((self.nombre, self.__nota))
             print(resultado)
         else:
-            self.nota = 0
+            self.__nota = 0
             raise ValueError('La nota debe ser 0 o mayor y no puede ser mayor de 10.')
 
 
@@ -113,7 +119,7 @@ jose = Alumno('José', 'Pérez Martínez', '94839294M', 20, 10)
 
 print(jose.nombre)
 print(jose.apellidos)
-print(jose.dni)
+# print(jose.__dni)
 print(jose.edad)
 
 jose.CumplirAños()
@@ -122,7 +128,7 @@ print(jose.edad)
 
 jose.Saludar()
 
-jose.Añadirnota(9)
+jose.nota(9)
 print(f'La nota de {jose.nombre} {jose.apellidos} es {jose.nota}.')
 
 jose.AñadirAsignatura('Castellano')
@@ -158,8 +164,9 @@ print(clase_a.profesor)
 print(clase_a.alumnos, end = ' ')
 print(clase_a.asignaturas)
 
-print('El id de José es ' + str(jose.get_id) + '.')
-print(f'El id de la asignatura {castellano.nombre} es {str(castellano.get_id)}.')
+print('El id de José es ' + str(jose.id) + '.')
+print(f'El id de la asignatura {castellano.nombre} es {str(castellano.id)}.')
+print(f'El DNI de {jose.nombre} es {jose.dni}.')
 
 #jose.nombre = 'José'
 #jose.apellidos = 'Pérez Martínez'
