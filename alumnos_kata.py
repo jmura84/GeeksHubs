@@ -6,15 +6,21 @@ class Alumno():
     edad = 0
     nota = 0
     asignaturas = []
+    __id = 0
 
     # Constructor
-    def __init__(self, nombre, apellidos, dni, edad):
+    def __init__(self, nombre, apellidos, dni, edad, id):
         self.nombre = nombre
         self.apellidos = apellidos
         self.dni = dni
         self.edad = edad
+        self.__id = id
 
     # Métodos
+    @property
+    def get_id(self):
+        return self.__id
+
     def Saludar(self):
         print(f'Hola, me llamo {self.nombre} {self.apellidos} y tengo {self.edad} años.')
 
@@ -44,12 +50,18 @@ class Asignatura():
     # Propiedades
     nombre = ''
     nota = 0
+    __id = 0
 
     # Constructor
-    def __init__(self, nombre, nota):
+    def __init__(self, nombre, nota, id):
         self.Añadirnota(nombre, nota)
+        self.__id = id
 
     # Métodos
+    @property
+    def get_id(self):
+        return self.__id
+
     def Añadirnota(self, nombre, nota):
         if nota >= 0 and nota <= 10:
             self.nota = nota
@@ -97,7 +109,7 @@ class Clase():
 
 
 
-jose = Alumno('José', 'Pérez Martínez', '94839294M', 20)
+jose = Alumno('José', 'Pérez Martínez', '94839294M', 20, 10)
 
 print(jose.nombre)
 print(jose.apellidos)
@@ -122,7 +134,7 @@ print(jose.asignaturas)
 
 jose.EliminarAsignatura('Castellano')
 
-asignatura = Asignatura('Castellano', 9)
+castellano = Asignatura('Castellano', 9, 1)
 
 clase_a = Clase('Benito López')
 
@@ -144,8 +156,10 @@ clase_a.BorrarAlumno('Pepe')
 
 print(clase_a.profesor)
 print(clase_a.alumnos, end = ' ')
-print(clase_a.asignaturas, end = ' ')
+print(clase_a.asignaturas)
 
+print('El id de José es ' + str(jose.get_id) + '.')
+print(f'El id de la asignatura {castellano.nombre} es {str(castellano.get_id)}.')
 
 #jose.nombre = 'José'
 #jose.apellidos = 'Pérez Martínez'
