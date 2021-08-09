@@ -13,8 +13,6 @@ class Animal():
     # Métodos
     def comer(self):
         print(f'{self.especie} se dispone a comer')
-    def cazar(self):
-        print(f'{self.especie} se dispone a cazar')
     def dormir(self):
         print(f'{self.especie} se dispone a dormir')
 
@@ -25,6 +23,9 @@ class Leon(Animal):
     def __init__(self, especie, altura, peso):
         super().__init__(especie, altura, peso)
 
+    # Métodos
+    def cazar(self):
+        print(f'{self.especie} se dispone a cazar')
 
 
 class Mascota():
@@ -69,5 +70,4 @@ perro = Perro('Mastín', 50, 40, 'Tobi', 'Tomás', '242342342')
 
 perro.sentarse()
 perro.tumbarse()
-perro.cazar()
 print(perro.nombre)
