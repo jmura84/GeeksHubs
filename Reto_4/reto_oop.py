@@ -98,7 +98,7 @@ class Entregable():
         if obj1.entregado == False:
             print(f'Ya se había devuelto el artículo {obj1.titulo}')
         else:
-            obj1.entregado = True
+            obj1.entregado = False
             print(f'¡Artículo {obj1.titulo} devuelto!')
     def is_entregado(self, obj1):
         if obj1.entregado == True:
@@ -157,3 +157,7 @@ fighterz = Videojuego('Dragon Ball FighterZ', 150, 'Lucha', 'Arc System Works')
 
 interfaz.compareTo(bokunohero, naruto)
 interfaz.compareTo(guiltygear, fighterz)
+
+interfaz.devolver(bokunohero)
+print(bokunohero.entregado)
+interfaz.is_entregado(bokunohero)
