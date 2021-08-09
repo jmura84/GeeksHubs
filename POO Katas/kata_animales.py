@@ -33,6 +33,12 @@ class Mascota():
     amo = ''
     numero_chip = ''
 
+    # Constructor
+    def __init__(self, nombre, amo, numero_chip):
+        self.nombre = nombre
+        self.amo = amo
+        self.numero_chip = numero_chip
+
     # Métodos
     def sentarse(self):
         print(f'{self.especie} se sienta')
@@ -45,8 +51,8 @@ class Mascota():
 class Perro(Animal, Mascota):
     # Constructor
     def __init__(self, especie, peso, altura, nombre, amo, numero_chip):
-        Animal.__init__(especie, peso, altura)
-        Mascota.__init__(nombre, amo, numero_chip)
+        Animal.__init__(self, especie, peso, altura)
+        Mascota.__init__(self, nombre, amo, numero_chip)
 
 
 
