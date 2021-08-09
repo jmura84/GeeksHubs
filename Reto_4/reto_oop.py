@@ -8,10 +8,10 @@ class Serie():
 
     # Constructor
     def __init__(self, titulo, temporadas, genero, creador):
-        self.set_titulo(titulo)
-        self.set_temporadas(temporadas)
-        self.set_genero(genero)
-        self.set_creador(creador)
+        self.__titulo = titulo
+        self.__temporadas = temporadas
+        self.__genero = genero
+        self.__creador = creador
     # Get / Set
     @property
     def titulo(self):
@@ -84,3 +84,11 @@ class Videojuego():
 
     # Métodos
 
+
+bokunohero = Serie('Boku no Hero Academia', 5, 'Anime shonen', 'Kohei Horikoshi')
+
+print(bokunohero.titulo)
+print(bokunohero.genero)
+print(bokunohero.temporadas)
+print(bokunohero.creador)
+print(bokunohero.entregado)
