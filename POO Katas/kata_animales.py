@@ -1,8 +1,8 @@
 class Animal():
     # Propiedades
     especie = ''
-    peso = ''
-    altura = ''
+    peso = 0
+    altura = 0
 
     # Constructor
     def __init__(self, especie, peso, altura):
@@ -27,16 +27,28 @@ class Leon(Animal):
 
 
 
-class Mascota(Animal):
-    # Constructor
-    def __init__(self, especie, peso, altura):
-        super().__init__(especie, peso, altura)
+class Mascota():
+    # Propiedades
+    nombre = ''
+    amo = ''
+    numero_chip = ''
 
     # Métodos
     def sentarse(self):
         print(f'{self.especie} se sienta')
+
     def tumbarse(self):
         print(f'{self.especie} se tumba')
+
+
+
+class Perro(Animal, Mascota):
+    # Constructor
+    def __init__(self, especie, peso, altura, nombre, amo, numero_chip):
+        Animal.__init__(especie, peso, altura)
+        Mascota.__init__(nombre, amo, numero_chip)
+
+
 
 
 leon = Leon('León africano', '250', '1,20')
@@ -47,8 +59,9 @@ leon.dormir()
 print(leon.especie)
 print(leon.peso)
 
-perro = Mascota('Mastín', '50', '1')
+perro = Perro('Mastín', 50, 40, 'Tobi', 'Tomás', '242342342')
 
 perro.sentarse()
 perro.tumbarse()
 perro.cazar()
+print(perro.nombre)
