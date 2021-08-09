@@ -52,9 +52,9 @@ class Videojuego():
 
     def __init__(self, titulo, horas_estimadas, genero, compañia):
         self.set_titulo(titulo)
-        self.set_horas_estimadas(horas_estimadas)
-        self.set_genero(genero)
-        self.set_compañia(compañia)
+        self.__horas_estimadas = horas_estimadas
+        self.__genero = genero
+        self.__compañia = compañia
 
     # Get / Set
     @property
@@ -85,6 +85,32 @@ class Videojuego():
     # Métodos
 
 
+
+class Entregable():
+    # Métodos
+    def entregar(self, obj1):
+        if obj1.entregado == True:
+            print(f'Todavía no se ha devuelto el artículo {obj1.titulo}')
+        else:
+            obj1.entregado = True
+            print(f'¡Artículo {obj1.titulo} entregado!')
+    def devolver(self, obj1):
+        if obj1.entregado == False:
+            print(f'Ya se había devuelto el artículo {obj1.titulo}')
+        else:
+            obj1.entregado = True
+            print(f'¡Artículo {obj1.titulo} devuelto!')
+    def is_entregado(self, obj1):
+        if obj1.entregado == True:
+            print(f'El artículo {obj1.titulo} está en estado entregado')
+        else:
+            print(f'El artículo {obj1.titulo} está en estado devuelto')
+    def compareTo(self, obj1, obj2):
+        pass
+
+
+
+
 bokunohero = Serie('Boku no Hero Academia', 5, 'Anime shonen', 'Kohei Horikoshi')
 
 print(bokunohero.titulo)
@@ -92,3 +118,21 @@ print(bokunohero.genero)
 print(bokunohero.temporadas)
 print(bokunohero.creador)
 print(bokunohero.entregado)
+
+interfaz = Entregable()
+
+interfaz.entregar(bokunohero)
+interfaz.entregar(bokunohero)
+interfaz.is_entregado(bokunohero)
+print(bokunohero.entregado)
+
+# guiltygear = Videojuego('Guilty Gear Strive', 150, 'Lucha', 'Arc System Works')
+#
+# print(guiltygear.titulo)
+# print(guiltygear.horas_estimadas)
+# print(guiltygear.genero)
+# print(guiltygear.compañia)
+# print(guiltygear.entregado)
+#
+# guiltygear.set_titulo('Dragon Ball FighterZ')
+# print(guiltygear.titulo)
