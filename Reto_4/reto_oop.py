@@ -51,7 +51,7 @@ class Videojuego():
     __compañia = ''
 
     def __init__(self, titulo, horas_estimadas, genero, compañia):
-        self.set_titulo(titulo)
+        self.__titulo = titulo
         self.__horas_estimadas = horas_estimadas
         self.__genero = genero
         self.__compañia = compañia
@@ -106,8 +106,22 @@ class Entregable():
         else:
             print(f'El artículo {obj1.titulo} está en estado devuelto')
     def compareTo(self, obj1, obj2):
-        pass
-
+        if type(obj1) and type(obj2) == Serie:
+            if obj1.temporadas > obj2.temporadas:
+                print(f'{obj1.titulo} tiene {obj1.temporadas - obj2.temporadas} temporadas más que {obj2.titulo}')
+            elif obj1.temporadas < obj2.temporadas:
+                print(f'{obj2.titulo} tiene {obj2.temporadas - obj2.temporadas} temporadas más que {obj1.titulo}')
+            else:
+                print(f'{obj1.titulo} y {obj2.titulo} tienen {obj1.temporadas} temporadas')
+        elif type(obj1) and type(obj2) == Videojuego:
+            if obj1.horas_estimadas > obj2.horas_estimadas:
+                print(f'{obj1.titulo} tiene {obj1.horas_estimadas - obj2.horas_estimadas} horas más de duración que {obj2.titulo}')
+            elif obj1.horas_estimadas < obj2.horas_estimadas:
+                print(f'{obj2.titulo} tiene {obj2.temporadas - obj2.temporadas} horas más de duración que {obj1.titulo}')
+            else:
+                print(f'{obj1.titulo} y {obj2.titulo} tienen {obj1.horas_estimadas} horas de duración')
+        else:
+            print('Solo se pueden comparar si son de la misma categoría: series o videojuegos')
 
 
 
@@ -119,6 +133,8 @@ print(bokunohero.temporadas)
 print(bokunohero.creador)
 print(bokunohero.entregado)
 
+naruto = Serie('Naruto', 3, 'Anime shonen', 'Masashi Kishimoto')
+
 interfaz = Entregable()
 
 interfaz.entregar(bokunohero)
@@ -126,13 +142,18 @@ interfaz.entregar(bokunohero)
 interfaz.is_entregado(bokunohero)
 print(bokunohero.entregado)
 
-# guiltygear = Videojuego('Guilty Gear Strive', 150, 'Lucha', 'Arc System Works')
-#
-# print(guiltygear.titulo)
-# print(guiltygear.horas_estimadas)
-# print(guiltygear.genero)
-# print(guiltygear.compañia)
-# print(guiltygear.entregado)
-#
+guiltygear = Videojuego('Guilty Gear Strive', 150, 'Lucha', 'Arc System Works')
+
+print(guiltygear.titulo)
+print(guiltygear.horas_estimadas)
+print(guiltygear.genero)
+print(guiltygear.compañia)
+print(guiltygear.entregado)
+
+fighterz = Videojuego('Dragon Ball FighterZ', 150, 'Lucha', 'Arc System Works')
+
 # guiltygear.set_titulo('Dragon Ball FighterZ')
 # print(guiltygear.titulo)
+
+interfaz.compareTo(bokunohero, naruto)
+interfaz.compareTo(guiltygear, fighterz)
