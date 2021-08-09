@@ -7,7 +7,6 @@ class Alumno():
     __id = 0
     nota = 0
     asignaturas = []
-    _id = 0
 
     # Constructor
     def __init__(self, nombre, apellidos, dni, edad, id):
