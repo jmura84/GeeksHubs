@@ -12,6 +12,10 @@ class Serie():
         self.__temporadas = temporadas
         self.__genero = genero
         self.__creador = creador
+
+    def __str__(self):
+        return f'Esta serie llamada {self.titulo} tiene {str(self.temporadas)} temporadas, es del género {self.genero} y su creador es {self.creador}'
+
     # Get / Set
     @property
     def titulo(self):
@@ -50,11 +54,15 @@ class Videojuego():
     __genero = ''
     __compañia = ''
 
+    # Constructor
     def __init__(self, titulo, horas_estimadas, genero, compañia):
         self.__titulo = titulo
         self.__horas_estimadas = horas_estimadas
         self.__genero = genero
         self.__compañia = compañia
+
+    def __str__(self):
+        return f'Este videojuego llamado {self.titulo} dura aproximadamente {str(self.horas_estimadas)} horas, es del género {self.genero} y pertenece a la compañía {self.compañia}'
 
     # Get / Set
     @property
@@ -161,3 +169,8 @@ interfaz.compareTo(guiltygear, fighterz)
 interfaz.devolver(bokunohero)
 print(bokunohero.entregado)
 interfaz.is_entregado(bokunohero)
+
+print(bokunohero)
+print(naruto)
+print(guiltygear)
+print(fighterz)
