@@ -1,6 +1,6 @@
 '''
 Este módulo es una práctica de programación orientada a objetos que incluye las clases Serie, Videojuego y Entregable.
-La clase entregable contiene también el método compareTo que sirve para comparar el número de horas estimadas y
+La clase Entregable contiene también el método compareTo que sirve para comparar el número de horas estimadas y
 el número de temporadas según el tipo de objeto.
 '''
 
