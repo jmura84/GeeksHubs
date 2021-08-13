@@ -1,6 +1,7 @@
 '''
 Este módulo es una práctica de programación orientada a objetos que incluye las clases Serie, Videojuego y Entregable.
-
+La clase entregable contiene también el método compareTo que sirve para comparar el número de horas estimadas y
+el número de temporadas según el tipo de objeto.
 '''
 
 __author__ = 'Javier Muñoz Ramón'
@@ -116,23 +117,43 @@ class Entregable():
     '''
     # Métodos
     def entregar(self, obj1):
+        '''
+        Cambia el estado del artículo a entregado si este ha sido devuelto.
+        Input: objeto
+        Output: None
+        '''
         if obj1.entregado == True:
             print(f'Todavía no se ha devuelto el artículo {obj1.titulo}')
         else:
             obj1.entregado = True
             print(f'¡Artículo {obj1.titulo} entregado!')
     def devolver(self, obj1):
+        '''
+        Cambia el estado del artículo a devuelto si este ha sido entregado.
+        Input: objeto
+        Output: None
+        '''
         if obj1.entregado == False:
             print(f'Ya se había devuelto el artículo {obj1.titulo}')
         else:
             obj1.entregado = False
             print(f'¡Artículo {obj1.titulo} devuelto!')
     def is_entregado(self, obj1):
+        '''
+        Verifica si el estado del artículo es entregado o devuelto.
+        Input: objeto
+        Output: None
+        '''
         if obj1.entregado == True:
             print(f'El artículo {obj1.titulo} está en estado entregado')
         else:
             print(f'El artículo {obj1.titulo} está en estado devuelto')
     def compareTo(self, obj1, obj2):
+        '''
+        Compara el número de horas estimadas o el número de temporadas según el tipo de objeto que se compare.
+        Input: dos objetos
+        Output: None
+        '''
         try:
             if type(obj1) and type(obj2) == Serie:
                 if obj1.temporadas > obj2.temporadas:
