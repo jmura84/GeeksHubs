@@ -131,46 +131,49 @@ class Entregable():
         else:
             print('Solo se pueden comparar si son de la misma categoría: series o videojuegos')
 
+if __name__ == '__main__':
+    bokunohero = Serie('Boku no Hero Academia', 5, 'Anime shonen', 'Kohei Horikoshi')
 
+    print(bokunohero.titulo)
+    print(bokunohero.genero)
+    print(bokunohero.temporadas)
+    print(bokunohero.creador)
+    print(bokunohero.entregado)
 
-bokunohero = Serie('Boku no Hero Academia', 5, 'Anime shonen', 'Kohei Horikoshi')
+    # bokunohero.set_titulo('Bleach')
+    # bokunohero.titulo = 'Bleach'
+    # bokunohero.titulo
 
-print(bokunohero.titulo)
-print(bokunohero.genero)
-print(bokunohero.temporadas)
-print(bokunohero.creador)
-print(bokunohero.entregado)
+    naruto = Serie('Naruto', 3, 'Anime shonen', 'Masashi Kishimoto')
 
-naruto = Serie('Naruto', 3, 'Anime shonen', 'Masashi Kishimoto')
+    interfaz = Entregable()
 
-interfaz = Entregable()
+    interfaz.entregar(bokunohero)
+    interfaz.entregar(bokunohero)
+    interfaz.is_entregado(bokunohero)
+    print(bokunohero.entregado)
 
-interfaz.entregar(bokunohero)
-interfaz.entregar(bokunohero)
-interfaz.is_entregado(bokunohero)
-print(bokunohero.entregado)
+    guiltygear = Videojuego('Guilty Gear Strive', 150, 'Lucha', 'Arc System Works')
 
-guiltygear = Videojuego('Guilty Gear Strive', 150, 'Lucha', 'Arc System Works')
+    print(guiltygear.titulo)
+    print(guiltygear.horas_estimadas)
+    print(guiltygear.genero)
+    print(guiltygear.compañia)
+    print(guiltygear.entregado)
 
-print(guiltygear.titulo)
-print(guiltygear.horas_estimadas)
-print(guiltygear.genero)
-print(guiltygear.compañia)
-print(guiltygear.entregado)
+    fighterz = Videojuego('Dragon Ball FighterZ', 150, 'Lucha', 'Arc System Works')
 
-fighterz = Videojuego('Dragon Ball FighterZ', 150, 'Lucha', 'Arc System Works')
+    # guiltygear.set_titulo('Dragon Ball FighterZ')
+    # print(guiltygear.titulo)
 
-# guiltygear.set_titulo('Dragon Ball FighterZ')
-# print(guiltygear.titulo)
+    interfaz.compareTo(bokunohero, naruto)
+    interfaz.compareTo(guiltygear, fighterz)
 
-interfaz.compareTo(bokunohero, naruto)
-interfaz.compareTo(guiltygear, fighterz)
+    interfaz.devolver(bokunohero)
+    print(bokunohero.entregado)
+    interfaz.is_entregado(bokunohero)
 
-interfaz.devolver(bokunohero)
-print(bokunohero.entregado)
-interfaz.is_entregado(bokunohero)
-
-print(bokunohero)
-print(naruto)
-print(guiltygear)
-print(fighterz)
+    print(bokunohero)
+    print(naruto)
+    print(guiltygear)
+    print(fighterz)
