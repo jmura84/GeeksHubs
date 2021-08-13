@@ -110,6 +110,10 @@ class Videojuego():
 
 
 class Entregable():
+    '''
+    Clase que define el estado de entrega de los objetos serie o videojuego. Además tiene el método para ver el estado actual.
+    También incluye el método compareTo para comparar la las horas estimadas de dos videojuegos o las temporadas de dos series.
+    '''
     # Métodos
     def entregar(self, obj1):
         if obj1.entregado == True:
