@@ -20,6 +20,9 @@ class TestSkip(unittest.TestCase):
     def requires_numpy(self):
         return unittest.skipUnless(HAS_NUMPY, 'Requires Numpy')
 
+    def requires_not_numpy(self):
+        return unittest.skipIf(HAS_NUMPY, 'Requires Numpy is not installed')
+
     def requires_uncertainties(self):
         return unittest.skipUnless(HAS_UNCERTAINTIES, 'Requires Uncertainties')
 
