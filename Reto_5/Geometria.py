@@ -64,4 +64,4 @@ class Geometria:
             7: self.areaRomboide(self.a, self.b),
             8: self.areaTrapecio(self.a, self.b, self.c)
         }
-        return sw.get(case)
+        return sw.get(case)      
