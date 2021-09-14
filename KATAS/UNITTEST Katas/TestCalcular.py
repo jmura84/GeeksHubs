@@ -21,7 +21,11 @@ class TestCalculadora(unittest.TestCase):
         """
         result = c.sumar(8, 78)
         self.assertEqual(result, 86)
-        
+        print('tearDown() -> OK')
+
+    def tearDown(self):
+        print('tearDown() -> OK')
 
 
 if __name__ == '__main__':
+    unittest.main()
