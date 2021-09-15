@@ -9,7 +9,7 @@ class View:
               "5: Calcular Área del Pentagono\n"
               "6: Calcular Área del Rombo\n"
               "7: Calcular Área del Romboide\n"
-              "8: Calcular Área del Trappecio\n")
+              "8: Calcular Área del Trapecio\n")
 
         case = int(input("Seleccione una opcion: "))
         object.set_figuraName(case)
