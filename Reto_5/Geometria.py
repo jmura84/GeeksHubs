@@ -14,7 +14,7 @@ class Geometria:
         PI = 3.1416
         return PI * pow(r, 2)
 
-    def areaTiangulo(self, a, b):
+    def areaTriangulo(self, a, b):
         return (a * b)/2
 
     def areaRectangulo(self, a, b):
