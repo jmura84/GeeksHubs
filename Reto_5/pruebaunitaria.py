@@ -1,7 +1,7 @@
 import unittest
-import Geometria as geo
+import Geometria as g
 
-geo = geo.Geometria(1, 2, 3)
+geo = g.Geometria(1, 2, 3)
 
 class TestGeometria(unittest.TestCase):
 
