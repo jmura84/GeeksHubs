@@ -1,7 +1,7 @@
 import unittest
 import Geometria as g
 
-geo = g.Geometria(1, 2, 3)
+geo = g.Geometria(2, 2, 3)
 
 class TestGeometria(unittest.TestCase):
 
@@ -20,7 +20,7 @@ class TestGeometria(unittest.TestCase):
         """
         Tests that it calculate the area of a square
         """
-        result = geo.areaCuadrado(2)
+        result = geo.areaCuadrado(geo.a)
         self.assertEqual(result, 4)
         print('tearDown() -> OK')
 
