@@ -1,3 +1,12 @@
+'''
+Este módulo es una práctica de tests unitarios para poner a prueba las partes de los módulos View y Geometría.
+'''
+
+__author__ = 'Javier Muñoz Ramón'
+__copyright__ = 'Copyright (c) 2021. All rights are reserved.'
+__license__ = 'GPL 3'
+
+
 import unittest
 from unittest.mock import patch
 import Geometria as g
@@ -21,9 +30,10 @@ class TestGeometria(unittest.TestCase):
         print('SetUp() -> OK')
 
     @patch('builtins.input', side_effect = [1])
+    # Con esta línea, en la parte de side_effect, se añade un input de usuario concreto al método select.
     def test_areacuadrado(self, mock_input):
         """
-        Tests that it calculate the area of a square
+        Prueba que calcule el área de un cuadrado.
         """
         view.select(geo)
         print(geo.figuraName)
@@ -34,7 +44,7 @@ class TestGeometria(unittest.TestCase):
     @patch('builtins.input', side_effect=[2])
     def test_areacirculo(self, mock_input):
         """
-        Tests that it can calculate the area of a circle
+        Prueba que calcule el área de un círculo.
         """
         view.select(geo)
         print(geo.figuraName)
@@ -45,7 +55,7 @@ class TestGeometria(unittest.TestCase):
     @patch('builtins.input', side_effect=[3])
     def test_areatriangulo(self, mock_input):
         """
-        Tests that it can calculate the area of a triangle
+        Prueba que calcule el área de un triángulo.
         """
         view.select(geo)
         print(geo.figuraName)
@@ -56,7 +66,7 @@ class TestGeometria(unittest.TestCase):
     @patch('builtins.input', side_effect=[4])
     def test_arearectangulo(self, mock_input):
         """
-        Tests that it can calculate the area of a rectangle
+        Prueba que calcule el área de un rectángulo.
         """
         view.select(geo)
         print(geo.figuraName)
@@ -67,7 +77,7 @@ class TestGeometria(unittest.TestCase):
     @patch('builtins.input', side_effect=[5])
     def test_areapentagono(self, mock_input):
         """
-        Tests that it can calculate the area of a pentagon
+        Prueba que calcule el área de un pentágono.
         """
         view.select(geo)
         print(geo.figuraName)
@@ -78,7 +88,7 @@ class TestGeometria(unittest.TestCase):
     @patch('builtins.input', side_effect=[6])
     def test_arearombo(self, mock_input):
         """
-        Tests that it can calculate the area of a rhombus
+        Prueba que calcule el área de un rombo.
         """
         view.select(geo)
         print(geo.figuraName)
@@ -89,7 +99,7 @@ class TestGeometria(unittest.TestCase):
     @patch('builtins.input', side_effect=[7])
     def test_arearomboide(self, mock_input):
         """
-        Tests that it can calculate the area of a rhomboid
+        Prueba que calcule el área de un romboide.
         """
         view.select(geo)
         print(geo.figuraName)
@@ -100,7 +110,7 @@ class TestGeometria(unittest.TestCase):
     @patch('builtins.input', side_effect=[8])
     def test_areatrapecio(self, mock_input):
         """
-        Tests that it can calculate the area of a trapezoid
+        Prueba que calcule el área de un trapecio.
         """
         view.select(geo)
         print(geo.figuraName)
