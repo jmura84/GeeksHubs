@@ -1,5 +1,7 @@
 import unittest
-from Geometria.py import Geometria as geo
+import Geometria as geo
+
+geo = geo.Geometria(1, 2, 3)
 
 class TestGeometria(unittest.TestCase):
 
