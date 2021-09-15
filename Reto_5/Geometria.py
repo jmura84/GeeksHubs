@@ -39,7 +39,7 @@ class Geometria:
         if case == 2:
             self.figuraName = "Circulo"
         if case == 3:
-            self.figuraName = "Tiangulo"
+            self.figuraName = "Triangulo"
         if case == 4:
             self.figuraName = "Rectangulo"
         if case == 5:

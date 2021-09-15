@@ -80,6 +80,11 @@ class TestGeometria(unittest.TestCase):
         self.assertEqual(result, 4)
         print('tearDown() -> OK')
 
+    def test_set_figuraname(self):
+        self.assertIs(geo.set_figuraName(geo.a), "Cuadrado")
+        self.assertIs(geo.set_figuraName(geo.a), "Circulo")
+        self.assertIs(geo.set_figuraName(geo.a), "Triangulo")
+
     def tearDown(self):
         print('tearDown() -> OK')
 
