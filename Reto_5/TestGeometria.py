@@ -31,8 +31,8 @@ class TestGeometria(unittest.TestCase):
 
     @patch('builtins.input', side_effect = [1])
     '''
-    Con esta línea, en la parte de side_effect, se añade un input de usuario concreto al método select.
-    Al añadir mock_input como argumento del siguiente método, este input se aplica automáticamente cuando
+    Con esta línea, en la parte de side_effect, se añade un input de usuario concreto.
+    Al añadir mock_input como argumento del siguiente método, este input se introduce automáticamente cuando
     el método select lo pida.
     '''
     def test_areacuadrado(self, mock_input):
