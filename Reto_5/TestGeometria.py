@@ -12,9 +12,10 @@ from unittest.mock import patch
 import Geometria as g
 import View as v
 
+
+
 geo = g.Geometria(2, 2, 3)
 view = v.View()
-
 
 class TestGeometria(unittest.TestCase):
 
