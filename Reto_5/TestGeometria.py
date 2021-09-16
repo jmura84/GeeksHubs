@@ -10,10 +10,10 @@ __license__ = 'GPL 3'
 import unittest
 from unittest.mock import patch
 import Geometria as g
-from View import View as v
+import View as v
 
 geo = g.Geometria(2, 2, 3)
-view = v()
+view = v.View()
 
 
 class TestGeometria(unittest.TestCase):
@@ -29,12 +29,13 @@ class TestGeometria(unittest.TestCase):
     def setUp(self):
         print('SetUp() -> OK')
 
-    @patch('builtins.input', side_effect = [1])
+
     '''
-    Con esta línea, en la parte de side_effect, se añade un input de usuario concreto.
+    Con la línea del decorador @patch, en la parte de side_effect, se añade un input de usuario concreto.
     Al añadir mock_input como argumento del siguiente método, este input se introduce automáticamente cuando
-    el método select lo pida.
+    el método select se lo pida.
     '''
+    @patch('builtins.input', side_effect=[1])
     def test_areacuadrado(self, mock_input):
         """
         Prueba que calcule el área de un cuadrado.
