@@ -30,7 +30,6 @@ class TestGeometria(unittest.TestCase):
     def setUp(self):
         print('SetUp() -> OK')
 
-
     '''
     Con la línea del decorador @patch, en la parte de side_effect, se añade un input de usuario concreto.
     Al añadir mock_input como argumento del siguiente método, este input se introduce automáticamente cuando
