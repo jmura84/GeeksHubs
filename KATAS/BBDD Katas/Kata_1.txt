@@ -29,3 +29,9 @@ Relaciones:
 
 Solución:
 
+Tablas:
+- Facturas
+- Ventas
+- Clientes
+- Proveedores
+- Productos / Existencias
