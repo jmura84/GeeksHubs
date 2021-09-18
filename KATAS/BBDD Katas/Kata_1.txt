@@ -1,0 +1,31 @@
+KATA I: identifica las entidades
+
+Una empresa que se dedica a la venta de productos de papelería desea llevar
+el control de su inventario a través de un sistema basado en bases de datos.
+El sistema debe registrar las ventas de mostrador e imprimir facturas si es
+necesario, con los datos de los clientes. Igualmente, se deben capturar las
+facturas de los proveedores para actualizar las existencias de los productos.
+Cada mes el sistema debe generar reportes sobre las existencias de los
+productos para realizar un inventario. El sistema debe ser capaz de manejar
+información global de ventas al mes, al año, así como la determinación de la
+existencia en la tienda de productos.
+
+
+Entidades fuertes:
+
+- Cliente
+- Productos / Existencias
+
+Entidades débiles:
+
+- Información de las facturas
+
+Relaciones:
+
+- ID > Cliente > Info facturas
+- Productos / Existencias > Info facturas
+
+
+
+Solución:
+
