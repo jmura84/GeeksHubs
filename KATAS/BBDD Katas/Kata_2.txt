@@ -1,0 +1,27 @@
+KATA II: identifica las entidades
+
+Una institución educativa desea llevar el control de sus alumnos a través de un
+sistema. La institución cuenta con 9 carreras diferentes, cada una de ellas
+divididas en un plan curricular de 9 semestres con 5 materias cada semestre.
+Dicho plan curricular asigna las materias a un semestre. El sistema debe llevar
+un control del historial académico de cada alumno. A cada catedrático se le
+asigna una o varias materias a impartir. En esta institución existen catedráticos
+que debe reportar 4 calificaciones parciales y un final durante el semestre.
+Hacer un diagrama E-R del modelo de datos
+
+
+Entidades fuertes:
+
+
+
+Entidades débiles:
+
+
+
+Relaciones:
+
+
+
+Solución:
+
+Tablas:
