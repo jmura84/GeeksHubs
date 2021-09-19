@@ -10,16 +10,39 @@ que debe reportar 4 calificaciones parciales y un final durante el semestre.
 Hacer un diagrama E-R del modelo de datos
 
 
+                                        <Reporta>--------------- [Catedráticos]
+                                            ^                           ^                                           ^
+                                            |                           |
+                                            |                           |
+                        (Historial académico + calificaciones)       <Asigna>
+                                            |                           ^
+                                            |                           |
+                                            v                           |
+          [Carreras] <----<Cursa><---- [Alumnos] ----><Escoge>----> [Materias] ----> (Semestre)
+                                                                        ^
+                                                                        |
+                                                                        |
+                                                                     <Asigna>
+                                                                        ^
+                                                                        |
+                                                                        |
+                                                                  (Plan curricular)
+
 Entidades fuertes:
 
-
+- Alumnos
+- Carreras
+- Catedráticos
+- Semestres
+- Materias
 
 Entidades débiles:
 
-
+- Plan curricular
+- Historial académico de cada alumno
+- Calificaciones
 
 Relaciones:
-
 
 
 Solución:
