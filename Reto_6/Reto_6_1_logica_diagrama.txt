@@ -5,4 +5,4 @@ Están unidos por el verbo prestar y en lo referente a la cardinalidad, la bibli
 
 Aunque DNI también es un valor único de cada socio, se usará el código de socio como Primary Key, y en biblioteca se utilizará ISBN para que luego se puedan relacionar en la tabla préstamo como Foreign Key.
 
-Para identificar cada préstamo sería ideal añadir un ID único como Primary Key.
+Para identificar cada préstamo sería ideal añadir un ID único y secuencial como Primary Key.
