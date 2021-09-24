@@ -4,3 +4,5 @@ Sin biblioteca no hay socios y sin socios no hay biblioteca, pero para que exist
 Están unidos por el verbo prestar y en lo referente a la cardinalidad, la biblioteca solo es una, pero puede prestar 0 o muchos libros a 1 o muchos socios.
 
 Aunque DNI también es un valor único de cada socio, se usará el código de socio como Primary Key, y en biblioteca se utilizará ISBN para que luego se puedan relacionar en la tabla préstamo como Foreign Key.
+
+Para identificar cada préstamo sería ideal añadir un ID único como Primary Key.
