@@ -3,7 +3,8 @@ ClaveLibro int NOT NULL PRIMARY KEY,
 Título varchar(255) NOT NULL,
 Idioma varchar(255),
 Formato varchar(255),
-FOREIGN KEY (ClaveEditorial) REFERENCES Editorial(ClaveEditorial)
+CONSTRAINT FK_ClaveEditorial FOREIGN KEY (ClaveEditorial)
+REFERENCES Editorial(ClaveEditorial)
 );
 
 CREATE TABLE Tema (
@@ -41,20 +42,27 @@ Categoría varchar(255)
 );
 
 CREATE TABLE Préstamo (
-FOREIGN KEY (ClaveSocio) REFERENCES Socio(ClaveSocio),
-FOREIGN KEY (ClaveEjemplar) REFERENCES Ejemplar(ClaveEjemplar),
-FOREIGN KEY (NúmeroOrden) REFERENCES Ejemplar(NúmeroOrden),
+CONSTRAINT FK_ClaveSocio FOREIGN KEY (ClaveSocio)
+REFERENCES Socio(ClaveSocio),
+CONSTRAINT FK_ClaveEjemplar FOREIGN KEY (ClaveEjemplar)
+REFERENCES Ejemplar(ClaveEjemplar),
+CONSTRAINT FK_NúmeroOrden FOREIGN KEY (NúmeroOrden)
+REFERENCES Ejemplar(NúmeroOrden),
 Fecha_préstamo int NOT NULL,
 Fecha_devolución int NOT NULL,
 Notas varchar(255)
 );
 
 CREATE TABLE Trata_sobre (
-FOREIGN KEY (ClaveLibro) REFERENCES Libro(ClaveLibro),
-FOREIGN KEY (ClaveTema) REFERENCES Tema(ClaveTema)
+CONSTRAINT FK_ClaveLibro FOREIGN KEY (ClaveLibro)
+REFERENCES Libro(ClaveLibro),
+CONSTRAINT FK_ClaveTema FOREIGN KEY (ClaveTema)
+REFERENCES Tema(ClaveTema)
 );
 
 CREATE TABLE Escrito_por (
-FOREIGN KEY (ClaveLibro) REFERENCES Libro(ClaveLibro),
-FOREIGN KEY (ClaveAutor) REFERENCES Autor(ClaveAutor)
+CONSTRAINT FK_ClaveLibro FOREIGN KEY (ClaveLibro)
+REFERENCES Libro(ClaveLibro),
+CONSTRAINT FK_ClaveAutor FOREIGN KEY (ClaveAutor)
+REFERENCES Autor(ClaveAutor)
 );
