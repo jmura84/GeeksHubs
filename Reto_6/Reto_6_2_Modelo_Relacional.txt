@@ -1,0 +1,68 @@
+CREATE TABLE Libro (
+ClaveLibro int NOT NULL PRIMARY KEY,
+Título varchar(255) NOT NULL,
+Idioma varchar(255),
+Formato varchar(255),
+CONSTRAINT FK_ClaveEditorial FOREIGN KEY (ClaveEditorial)
+REFERENCES Editorial(ClaveEditorial)
+);
+
+CREATE TABLE Tema (
+ClaveTema int NOT NULL PRIMARY KEY,
+Nombre varchar(255)
+);
+
+CREATE TABLE Autor (
+ClaveAutor int NOT NULL PRIMARY KEY,
+Nombre varchar(255) NOT NULL
+);
+
+CREATE TABLE Editorial (
+ClaveEditorial int NOT NULL PRIMARY KEY,
+Nombre varchar(255) NOT NULL,
+Dirección varchar(255),
+Teléfono varchar(20)
+);
+
+CREATE TABLE Ejemplar (
+ClaveEjemplar int NOT NULL PRIMARY KEY,
+FOREIGN KEY (ClaveLibro) REFERENCES Libro(ClaveLibro),
+NúmeroOrden int,
+Edición varchar(255),
+Ubicación varchar(255),
+Categoría varchar(255)
+);
+
+CREATE TABLE Socio (
+ClaveSocio int NOT NULL PRIMARY KEY,
+Nombre varchar(255) NOT NULL,
+Dirección varchar(255) NOT NULL,
+Teléfono varchar(255),
+Categoría varchar(255)
+);
+
+CREATE TABLE Préstamo (
+CONSTRAINT FK_ClaveSocio FOREIGN KEY (ClaveSocio)
+REFERENCES Socio(ClaveSocio),
+CONSTRAINT FK_ClaveEjemplar FOREIGN KEY (ClaveEjemplar)
+REFERENCES Ejemplar(ClaveEjemplar),
+CONSTRAINT FK_NúmeroOrden FOREIGN KEY (NúmeroOrden)
+REFERENCES Ejemplar(NúmeroOrden),
+Fecha_préstamo int NOT NULL,
+Fecha_devolución int NOT NULL,
+Notas varchar(255)
+);
+
+CREATE TABLE Trata_sobre (
+CONSTRAINT FK_ClaveLibro FOREIGN KEY (ClaveLibro)
+REFERENCES Libro(ClaveLibro),
+CONSTRAINT FK_ClaveTema FOREIGN KEY (ClaveTema)
+REFERENCES Tema(ClaveTema)
+);
+
+CREATE TABLE Escrito_por (
+CONSTRAINT FK_ClaveLibro FOREIGN KEY (ClaveLibro)
+REFERENCES Libro(ClaveLibro),
+CONSTRAINT FK_ClaveAutor FOREIGN KEY (ClaveAutor)
+REFERENCES Autor(ClaveAutor)
+);
