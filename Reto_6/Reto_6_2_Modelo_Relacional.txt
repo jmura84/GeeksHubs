@@ -1,11 +1,9 @@
-CREATE TABLE Libro (
-ClaveLibro int NOT NULL,
-Título varchar(255) NOT NULL,
-Idioma varchar(255),
-Formato varchar(255),
-CONSTRAINT FK_ClaveEditorial FOREIGN KEY (ClaveEditorial)
-REFERENCES Editorial(ClaveEditorial),
-PRIMARY KEY(ClaveLibro)
+CREATE TABLE Editorial (
+ClaveEditorial int NOT NULL,
+Nombre varchar(255) NOT NULL,
+Dirección varchar(255),
+Teléfono varchar(20),
+PRIMARY KEY(ClaveEditorial)
 );
 
 CREATE TABLE Tema (
@@ -20,22 +18,25 @@ Nombre varchar(255) NOT NULL,
 PRIMARY KEY(ClaveAutor)
 );
 
-CREATE TABLE Editorial (
-ClaveEditorial int NOT NULL,
-Nombre varchar(255) NOT NULL,
-Dirección varchar(255),
-Teléfono varchar(20),
-PRIMARY KEY(ClaveEditorial)
+CREATE TABLE Libro (
+ClaveLibro int NOT NULL,
+Título varchar(255) NOT NULL,
+Idioma varchar(255),
+Formato varchar(255),
+PRIMARY KEY(ClaveLibro),
+CONSTRAINT FK_ClaveEditorial FOREIGN KEY (ClaveEditorial)
+REFERENCES Editorial(ClaveEditorial)
 );
 
 CREATE TABLE Ejemplar (
 ClaveEjemplar int NOT NULL,
-FOREIGN KEY (ClaveLibro) REFERENCES Libro(ClaveLibro),
 NúmeroOrden int,
 Edición varchar(255),
 Ubicación varchar(255),
 Categoría varchar(255),
-PRIMARY KEY(ClaveEjemplar)
+PRIMARY KEY(ClaveEjemplar),
+CONSTRAINT FK_ClaveLibro FOREIGN KEY (ClaveLibro)
+REFERENCES Libro(ClaveLibro)
 );
 
 CREATE TABLE Socio (
@@ -48,15 +49,15 @@ PRIMARY KEY(ClaveSocio)
 );
 
 CREATE TABLE Préstamo (
+Fecha_préstamo int NOT NULL,
+Fecha_devolución int NOT NULL,
+Notas varchar(255),
 CONSTRAINT FK_ClaveSocio FOREIGN KEY (ClaveSocio)
 REFERENCES Socio(ClaveSocio),
 CONSTRAINT FK_ClaveEjemplar FOREIGN KEY (ClaveEjemplar)
 REFERENCES Ejemplar(ClaveEjemplar),
 CONSTRAINT FK_NúmeroOrden FOREIGN KEY (NúmeroOrden)
-REFERENCES Ejemplar(NúmeroOrden),
-Fecha_préstamo int NOT NULL,
-Fecha_devolución int NOT NULL,
-Notas varchar(255)
+REFERENCES Ejemplar(NúmeroOrden)
 );
 
 CREATE TABLE Trata_sobre (
