@@ -66,10 +66,26 @@ GROUP BY f.nombre;
 
 1.14.
 
-
+SELECT AVG(a.precio), f.nombre
+FROM articulos AS a, fabricantes AS f
+WHERE a.precio >= 150
+GROUP BY f.nombre;
 
 1.15.
+
+SELECT nombre, precio
+FROM articulos
+WHERE precio =
+(SELECT MIN(precio) FROM articulos);
+
 1.16.
+
+SELECT a.nombre, a.precio, f.nombre
+FROM articulos AS a, fabricantes AS f
+WHERE a.precio =
+(SELECT MAX(precio) FROM articulos)
+GROUP BY a.nombre, a.precio, f.nombre;
+
 1.17.
 1.18.
 1.19.
