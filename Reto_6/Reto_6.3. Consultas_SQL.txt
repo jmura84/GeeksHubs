@@ -50,7 +50,7 @@ FROM articulos AS a, fabricantes AS f;
 SELECT a.nombre, a.precio, f.nombre
 FROM articulos AS a, fabricantes AS f;
 
-(¿Mismo enunciado explicado de otra forma?)
+(¿Mismo enunciado que el 1.10. explicado de otra forma?)
 
 1.12.
 
