@@ -92,7 +92,17 @@ INSERT INTO articulos VALUES (11,'Altavoces',70,2)
 
 1.18.
 
-
+UPDATE articulos
+SET nombre = 'Impresora Laser'
+WHERE codigo = 8;
 
 1.19.
+
+UPDATE articulos
+SET precio = precio * 0.9;
+
 1.20.
+
+UPDATE articulos
+SET precio = precio - 10
+WHERE precio >= 120;
