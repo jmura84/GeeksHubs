@@ -42,12 +42,32 @@ ORDER BY precio DESC, nombre ASC;
 
 1.10.
 
-
+SELECT a.nombre, a.precio, f.nombre
+FROM articulos AS a, fabricantes AS f;
 
 1.11.
+
+SELECT a.nombre, a.precio, f.nombre
+FROM articulos AS a, fabricantes AS f;
+
+(¿Mismo enunciado explicado de otra forma?)
+
 1.12.
+
+SELECT AVG(precio), fabricante
+FROM articulos
+GROUP BY fabricante;
+
 1.13.
+
+SELECT AVG(a.precio), f.nombre
+FROM articulos AS a, fabricantes AS f
+GROUP BY f.nombre;
+
 1.14.
+
+
+
 1.15.
 1.16.
 1.17.
