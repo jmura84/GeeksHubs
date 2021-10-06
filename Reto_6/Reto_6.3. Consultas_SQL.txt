@@ -87,6 +87,12 @@ WHERE a.precio =
 GROUP BY a.nombre, a.precio, f.nombre;
 
 1.17.
+
+INSERT INTO articulos VALUES (11,'Altavoces',70,2)
+
 1.18.
+
+
+
 1.19.
 1.20.
