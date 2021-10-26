@@ -1,0 +1,28 @@
+https://restcountries.com/v3.1/all
+https://restcountries.com/v3.1/name/Spain
+https://restcountries.com/v3.1/name/Spain?fullText=true
+https://restcountries.com/v3.1/alpha/es
+https://restcountries.com/v3.1/alpha?codes=es;jpn;rus
+https://restcountries.com/v3.1/currency/EUR
+https://restcountries.com/v3.1/lang/spanish
+https://restcountries.com/v3.1/capital/Tokyo
+https://restcountries.com/v3.1/callingcode/{callingcode} (No hay código telefónico en la versión 3.1)
+https://restcountries.com/v3.1/region/Europe
+https://restcountries.com/v3.1/subregion/Western Europe
+https://restcountries.com/v3.1/{service}?fields={field};{field};{field} (No hay campo 'service' en la versión 3.1)
+
+
+
+
+https://restcountries.com/v3.1/all
+https://restcountries.com/v3.1/name/{name}
+https://restcountries.com/v3.1/name/{name}?fullText=true
+https://restcountries.com/v3.1/alpha/{code}
+https://restcountries.com/v3.1/alpha?codes={code};{code};{code}
+https://restcountries.com/v3.1/currency/{currency}
+https://restcountries.com/v3.1/lang/{et}
+https://restcountries.com/v3.1/capital/{capital}
+https://restcountries.com/v3.1/callingcode/{callingcode}
+https://restcountries.com/v3.1/region/{region}
+https://restcountries.com/v3.1/regionalbloc/{regionalbloc}
+https://restcountries.com/v3.1/{service}?fields={field};{field};{field}
