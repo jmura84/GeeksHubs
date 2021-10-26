@@ -1,3 +1,5 @@
+SOLUCIONES:
+
 https://restcountries.com/v3.1/all
 https://restcountries.com/v3.1/name/Spain
 https://restcountries.com/v3.1/name/Spain?fullText=true
@@ -13,6 +15,7 @@ https://restcountries.com/v3.1/{service}?fields={field};{field};{field} (No hay 
 
 
 
+ENUNCIADOS:
 
 https://restcountries.com/v3.1/all
 https://restcountries.com/v3.1/name/{name}
