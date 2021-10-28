@@ -1,0 +1,42 @@
+pyenv virtualenv django-rest
+
+pyenv local django-rest
+
+pip install django
+
+django-admin startproject mysite
+
+cd mysite
+
+python manage.py runserver
+
+python manage.py startapp myapi
+
+Añadir en mysite/settings.py
+
+INSTALLED_APPS = [
+	'myapi.apps.MyapiConfig',
+	... #Leave all the other INSTALLED_APPS
+]
+
+python manage.py migrate
+
+
+Crear super usuario:
+
+python manage.py createsuperuser
+
+python manage.py runserver
+
+localhost:8000/admin
+
+en myapi/models.py:
+
+from django.db import models
+
+class Hero(models.Model):
+	name = models.CharField(max_length=60)
+	alias = models.CharField(max_length=60)
+
+	def __str__(self):
+		return self.name
