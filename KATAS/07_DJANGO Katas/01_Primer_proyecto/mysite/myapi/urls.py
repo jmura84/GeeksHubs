@@ -2,7 +2,7 @@ from django.urls import include, path
 from rest_framework import routers
 from . import views
 
-router = routers.DefaultRouter
+router = routers.DefaultRouter()
 router.register(r"heroes", views.HeroViewSet)
 
 # Wire up our API using automatic URL routing.
