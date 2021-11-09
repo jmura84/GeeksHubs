@@ -5,7 +5,7 @@ admin
 pgadmin pass: admin
 
 
-Database settings.py:
+Database mysite/mysite/settings.py:
 
 DATABASES={
    'default':{
@@ -17,3 +17,5 @@ DATABASES={
       'PORT':'5432',
    }
 }
+
+localhost:5432 is the standard port for PostgreSQL in PGAdmin4. Django uses port localhost:8000.
