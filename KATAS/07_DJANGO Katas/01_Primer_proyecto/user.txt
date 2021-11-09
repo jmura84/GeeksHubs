@@ -1,3 +1,19 @@
 admin
 admin@admin.com
 admin
+
+pgadmin pass: admin
+
+
+Database settings.py:
+
+DATABASES={
+   'default':{
+      'ENGINE':'django.db.backends.postgresql_psycopg2',
+      'NAME':'heroes',
+      'USER':'postgres',
+      'PASSWORD':'000666000',
+      'HOST':'localhost',
+      'PORT':'5432',
+   }
+}
