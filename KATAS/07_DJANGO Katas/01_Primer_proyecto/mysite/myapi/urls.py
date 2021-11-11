@@ -3,7 +3,8 @@ from rest_framework import routers
 from . import views
 
 router = routers.DefaultRouter()
-router.register(r"bookstore", views.AuthorViewSet, views.BookViewSet)
+router.register(r"bookstore", views.AuthorViewSet)
+router.register(r"bookstore", views.BookViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
