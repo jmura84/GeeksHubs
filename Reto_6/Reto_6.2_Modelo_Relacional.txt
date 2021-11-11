@@ -4,19 +4,19 @@ Nombre varchar(255) NOT NULL,
 Dirección varchar(255),
 Teléfono varchar(20),
 PRIMARY KEY(ClaveEditorial)
-);
+ON UPDATE CASCADE);
 
 CREATE TABLE Tema (
 ClaveTema int NOT NULL,
 Nombre varchar(255),
 PRIMARY KEY(ClaveTema)
-);
+ON UPDATE CASCADE);
 
 CREATE TABLE Autor (
 ClaveAutor int NOT NULL,
 Nombre varchar(255) NOT NULL,
 PRIMARY KEY(ClaveAutor)
-);
+ON UPDATE CASCADE);
 
 CREATE TABLE Libro (
 ClaveLibro int NOT NULL,
@@ -26,7 +26,7 @@ Formato varchar(255),
 PRIMARY KEY(ClaveLibro),
 CONSTRAINT FK_ClaveEditorial FOREIGN KEY (ClaveEditorial)
 REFERENCES Editorial(ClaveEditorial)
-);
+ON DELETE CASCADE);
 
 CREATE TABLE Ejemplar (
 ClaveEjemplar int NOT NULL,
@@ -37,7 +37,7 @@ Categoría varchar(255),
 PRIMARY KEY(ClaveEjemplar),
 CONSTRAINT FK_ClaveLibro FOREIGN KEY (ClaveLibro)
 REFERENCES Libro(ClaveLibro)
-);
+ON DELETE CASCADE);
 
 CREATE TABLE Socio (
 ClaveSocio int NOT NULL,
@@ -46,30 +46,32 @@ Dirección varchar(255) NOT NULL,
 Teléfono varchar(255),
 Categoría varchar(255),
 PRIMARY KEY(ClaveSocio)
-);
+ON UPDATE CASCADE);
 
 CREATE TABLE Préstamo (
 Fecha_préstamo int NOT NULL,
 Fecha_devolución int NOT NULL,
 Notas varchar(255),
 CONSTRAINT FK_ClaveSocio FOREIGN KEY (ClaveSocio)
-REFERENCES Socio(ClaveSocio),
+REFERENCES Socio(ClaveSocio)
+ON DELETE CASCADE,
 CONSTRAINT FK_ClaveEjemplar FOREIGN KEY (ClaveEjemplar)
-REFERENCES Ejemplar(ClaveEjemplar),
+REFERENCES Ejemplar(ClaveEjemplar)
+ON DELETE CASCADE,
 CONSTRAINT FK_NúmeroOrden FOREIGN KEY (NúmeroOrden)
 REFERENCES Ejemplar(NúmeroOrden)
-);
+ON DELETE CASCADE);
 
 CREATE TABLE Trata_sobre (
 CONSTRAINT FK_ClaveLibro FOREIGN KEY (ClaveLibro)
 REFERENCES Libro(ClaveLibro),
 CONSTRAINT FK_ClaveTema FOREIGN KEY (ClaveTema)
 REFERENCES Tema(ClaveTema)
-);
+ON DELETE CASCADE);
 
 CREATE TABLE Escrito_por (
 CONSTRAINT FK_ClaveLibro FOREIGN KEY (ClaveLibro)
 REFERENCES Libro(ClaveLibro),
 CONSTRAINT FK_ClaveAutor FOREIGN KEY (ClaveAutor)
 REFERENCES Autor(ClaveAutor)
-);
+ON DELETE CASCADE);
