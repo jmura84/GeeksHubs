@@ -23,9 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-a9ot9!pr7$vlg8d5!&&+8oz=sg!vsx8arf-e&^px)$yrgv*!$6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,7 +77,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES={
    'default':{
       'ENGINE':'django.db.backends.postgresql_psycopg2',
-      'NAME':'heroes',
+      'NAME':'bookstore',
       'USER':'postgres',
       'PASSWORD':'000666000',
       'HOST':'localhost',

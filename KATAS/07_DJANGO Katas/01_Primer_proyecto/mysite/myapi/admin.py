@@ -1,4 +1,6 @@
 from django.contrib import admin
-from .models import Hero
+from .models import Author
+from .models import Book
 
-admin.site.register(Hero)
+admin.site.register(Author)
+admin.site.register(Book)
