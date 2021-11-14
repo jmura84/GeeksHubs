@@ -9,5 +9,5 @@ class AuthorSerializer(serializers.HyperlinkedModelSerializer):
 
 class BookSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Api_Author
-        fields = ('id', 'title', 'description', 'created_date', 'added_by_id', 'author_id')
+        model = Api_Book
+        fields = ('id', 'title', 'description', 'created_date', 'added_by_id')
