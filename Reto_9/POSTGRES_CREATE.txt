@@ -1,0 +1,20 @@
+CREATE TABLE api_author (
+id SERIAL,
+name varchar(255) NOT NULL,
+created_date TIMESTAMP,
+added_by_id int NOT NULL,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE api_book (
+id SERIAL,
+title varchar(255) NOT NULL,
+description varchar(255) NOT NULL,
+created_date TIMESTAMP,
+added_by_id int NOT NULL,
+CONSTRAINT author_id FOREIGN KEY (id)
+REFERENCES api_author(id)
+ON DELETE CASCADE
+);
+
+
