@@ -1,3 +1,2 @@
-librero
-librero@librero.com
-librero
+user: librero
+pass: librero
