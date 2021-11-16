@@ -5,7 +5,7 @@ from django.utils import timezone
 AUTH_USER_MODEL = 'api_bookstore.MyUser'
 
 '''
-The above variable is used to override / substitute the default User model that can give issues: 
+The above variable is used to override / substitute the default User model that can give issues like ImproperlyConfigured: 
 https://docs.djangoproject.com/en/3.2/topics/auth/customizing/
 '''
 
