@@ -7,6 +7,11 @@ AUTH_USER_MODEL = 'api_bookstore.MyUser'
 '''
 The above variable is used to override / substitute the default User model that can give issues like ImproperlyConfigured: 
 https://docs.djangoproject.com/en/3.2/topics/auth/customizing/
+
+Error example:
+Exception: Could not resolve URL for hyperlinked relationship using view  name "user-detail". 
+You may have failed to include the related model in your API, or incorrectly configured the `lookup_field`
+attribute on this field.
 '''
 
 class Api_Author(models.Model):
@@ -28,10 +33,3 @@ class Api_Book(models.Model):
 
     def __str__(self):
         return self.title
-
-# class User(models.Model):
-#     name = models.CharField(max_length=200)
-#     surname = models.CharField(max_length=200)
-#
-#     def __str__(self):
-#         return self.name
