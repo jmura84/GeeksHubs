@@ -12,6 +12,8 @@ Error example:
 Exception: Could not resolve URL for hyperlinked relationship using view  name "user-detail". 
 You may have failed to include the related model in your API, or incorrectly configured the `lookup_field`
 attribute on this field.
+
+Adding endpoints for Users: https://www.django-rest-framework.org/tutorial/4-authentication-and-permissions/
 '''
 
 class Api_Author(models.Model):
