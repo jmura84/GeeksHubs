@@ -5,7 +5,7 @@ from django.utils import timezone
 class Api_Author(models.Model):
     # id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
-    added_by_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    added_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
